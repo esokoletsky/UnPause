@@ -1,6 +1,8 @@
 const express = require('express');
 // import mongoose
+const mongoose = require('mongoose');
 // import passport
+const passport = require('passport');
 // use TJ"s Node Videos https://bit.ly/tjsworkshop
 // setup your config file to connect to your database
 const app = express();
