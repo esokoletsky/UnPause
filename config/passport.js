@@ -40,7 +40,7 @@ function(req, email, password, done) { // callback with email and password from 
 
 }));
 
-passport.use('local', new LocalStrategy({
+passport.use('local-signup', new LocalStrategy({
     // by default, local strategy uses username and password, we will override with email
     usernameField : 'email',
     passwordField : 'password',
