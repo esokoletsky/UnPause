@@ -15,53 +15,50 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-// endpoint to register
 
-// endpoint to login
+    // =====================================
+    // LOGIN ===============================
+    // =====================================
+    // show the login form
+    app.get('/login', function(req, res) {
 
+      // render the page and pass in any flash data if it exists
+      res.render('login.ejs', { message: req.flash('loginMessage'),user:false }); 
+  });
 
-
-
-app.get('/api/food', (req, res) => {
-  const param = req.query.q;
-
-  if (!param) {
-    res.json({
-      error: 'Missing required parameter `q`',
-    });
-    return;
-  }
-
-  // WARNING: Not for production use! The following statement
-  // is not protected against SQL injections.
-  const r = db.exec(`
-    select ${COLUMNS.join(', ')} from entries
-    where description like '%${param}%'
-    limit 100
-  `);
-
-  if (r[0]) {
-    res.json(
-      r[0].values.map((entry) => {
-        const e = {};
-        COLUMNS.forEach((c, idx) => {
-          // combine fat columns
-          if (c.match(/^fa_/)) {
-            e.fat_g = e.fat_g || 0.0;
-            e.fat_g = (
-              parseFloat(e.fat_g, 10) + parseFloat(entry[idx], 10)
-            ).toFixed(2);
-          } else {
-            e[c] = entry[idx];
-          }
-        });
-        return e;
+  // process the login form
+  // app.post('/login', do all our passport stuff here);
+  app.post('/login', passport.authenticate('local-login', {
+    
+      successRedirect : '/users', // redirect to the secure profile section
+      failureRedirect : '/login', // redirect back to the signup page if there is an error
+      failureFlash : true // allow flash messages
       })
-    );
-  } else {
-    res.json([]);
-  }
-});
+      console.log('checking something')
+  );
+
+  // =====================================
+  // SIGNUP ==============================
+  // =====================================
+  // show the signup form
+  app.get('/signup', function(req, res) {
+
+      // render the page and pass in any flash data if it exists
+      res.render('signup.ejs', { message: req.flash('signupMessage'),user:false });
+  });
+
+  // process the signup form
+  // app.post('/signup', do all our passport stuff here);
+  app.post('/signup', passport.authenticate('local-signup', {
+      successRedirect : '/profile', // redirect to the secure profile section
+      failureRedirect : '/signup', // redirect back to the signup page if there is an error
+      failureFlash : true // allow flash messages
+  }));
+  
+
+
+
+
 
 app.listen(app.get('port'), () => {
   console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
