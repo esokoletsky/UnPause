@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
 const userSchema = mongoose.Schema({
     local: {
@@ -16,7 +17,7 @@ userSchema.methods.serialize = function() {
     };
 };
 
-module.exports = mongoose.models("User", userSchema);
+
 
 // methods ======================
 // generating a hash
@@ -28,3 +29,5 @@ userSchema.methods.generateHash = function(password) {
 userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };
+
+module.exports = mongoose.model("User", userSchema);

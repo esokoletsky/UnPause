@@ -1,0 +1,10 @@
+.nav {
+    list-style-type: none;
+    color: brown;
+}
+
+.nav li {
+    float:left;
+    display: block;
+    margin: 7px 2px;
+}

@@ -1,15 +1,13 @@
 const express = require('express');
-// import mongoose
 const mongoose = require('mongoose');
-// import passport
 const passport = require('passport');
-// use TJ"s Node Videos https://bit.ly/tjsworkshop
-// setup your config file to connect to your database
 const app = express();
+let morgan = require('morgan');
+let bodyParser = require('body-parser');
 
 const { DATABASE_URL } = require('./config/database');
 
-app.set('port', (process.env.PORT || 3001));
+const PORT = process.env.PORT || 3001;
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -17,6 +15,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 require('./config/passport')(passport);
+
+app.use(morgan('dev'));
+app.use(bodyParser());
 
 // required for passport
 app.use(passport.initialize());
@@ -27,38 +28,65 @@ app.use(passport.session()); // persistent login sessions
     // =====================================
     // show the login form
     app.get('/login', function(req, res) {
-
+      res.send({message:'loginpage'});
       // render the page and pass in any flash data if it exists
-      res.render('login.ejs', { message: req.flash('loginMessage'),user:false }); 
+     
   });
 
   // process the login form
   // app.post('/login', do all our passport stuff here);
-  app.post('/login', passport.authenticate('local-login', {
+  app.post('/login', (req,res)=>{
     
-      successRedirect : '/users', // redirect to the secure profile section
-      failureRedirect : '/login', // redirect back to the signup page if there is an error
-      failureFlash : true // allow flash messages
-      })
-  );
+    passport.authenticate('local-login',function(err,user,info){
+      console.log('here');
+      if(err){
+        res.send({error:err});
+      } else if(!user){
+        res.send({message:info})
+      } else {
+        res.send(user);
+      }
+      
+    })(req, res);
+  });
 
   // =====================================
   // SIGNUP ==============================
   // =====================================
   // show the signup form
   app.get('/signup', function(req, res) {
-
+    res.send({message:'signup page'});
       // render the page and pass in any flash data if it exists
-      res.render('signup.ejs', { message: req.flash('signupMessage'),user:false });
+      
   });
 
   // process the signup form
   // app.post('/signup', do all our passport stuff here);
-  app.post('/signup', passport.authenticate('local-signup', {
-      successRedirect : '/profile', // redirect to the secure profile section
-      failureRedirect : '/signup', // redirect back to the signup page if there is an error
-      failureFlash : true // allow flash messages
-  }));
+  app.post('/signup', (req,res)=>{
+    
+    passport.authenticate('local-signup',function(err,user,info){
+      console.log('here');
+      if(err){
+        res.send({error:err});
+      } else if(!user){
+        res.send({message:info})
+      } else {
+        res.send(user);
+      }
+      
+    })(req, res);
+  });
+
+  app.get('/profile', (req,res)=>{
+    res.send({user:req.user});
+  });
+
+  function isLoggedIn(req,res,next){
+    if(req.isAuthenticated())
+      return next();
+
+    res.redirect('/');
+  }
   
 
 
