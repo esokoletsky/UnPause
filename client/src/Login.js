@@ -25,7 +25,11 @@ class Login extends Component {
         localStorage.setItem('userID',res._id);
         localStorage.setItem('userEmail',res.local.email);
         this.props.hydrateState();
-        this.props.history.push('/dashboard');
+        if(this.props.match.params.hasOwnProperty('redirect')){
+          this.props.history.push(`/${this.props.match.params.redirect}`);
+        } else {
+          this.props.history.push('/dashboard');
+        }
       }
     });
     //alert('see eugene, he knows what he is doing')

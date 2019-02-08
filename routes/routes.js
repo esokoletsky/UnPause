@@ -88,6 +88,25 @@ module.exports = function(app, passport) {
     app.get('/profile', (req,res)=>{
       res.send({user:req.user});
     });
+
+    app.get('/youtube', (req,res)=>{
+        var request = require("request");
+
+        var options = { method: 'GET',
+        url: 'https://www.googleapis.com/youtube/v3/search',
+        qs: 
+        { part: 'snippet',
+            maxResults: '5',
+            q: 'motivational',
+            key: 'AIzaSyAqMXV6X2Athcax8_D9M2ZXdLQT0CMSRE8' }
+            };
+
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+
+            res.send(body);
+        });
+    });
   
     function isLoggedIn(req,res,next){
       if(req.isAuthenticated())

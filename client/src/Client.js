@@ -23,6 +23,16 @@ function login(user, cb) {
     .then(parseJSON)
     .then(cb);
 }
+function getVideos(cb) {
+  return fetch('/youtube', {
+    accept: "application/json",
+    method: 'get',
+    headers: {'Content-Type':'application/json'}
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -39,5 +49,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { register, login };
+const Client = { register, login, getVideos };
 export default Client;

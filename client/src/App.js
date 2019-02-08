@@ -4,8 +4,10 @@ import Nav from './Nav';
 import Dashboard from './Dashboard';
 import Login from './Login';
 import Logout from './Logout';
-import Grid from './Grid';
 import Header from './Header';
+import VideoGrid from './VideoGrid';
+import Quotes from './Quotes';
+import Grid from './Grid';
 import { Route } from 'react-router-dom';
 class App extends Component {
   
@@ -31,17 +33,19 @@ class App extends Component {
 
 
   render() {
+    let gridOrDashboard = (this.state.isLoggedIn) ? <Route exact path="/dashboard" render={(props) => <Dashboard {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} /> : <Route exact path="/" render={(props) => <Grid {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} />;
     return (
-      <div>
+      <div className="container">
       <p>LoggedIn: {""+this.state.isLoggedIn+""}</p>
       <Header />
       <Nav {...this.state} />
-      <Grid />
-
       <Route exact path="/login" render={(props) => <Login {...props} hydrateState={()=>this.hydrateState()} />} />
+      <Route exact path="/login/:redirect" render={(props) => <Login {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/logout" render={(props) => <Logout {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/register" render={(props) => <Register {...props} hydrateState={()=>this.hydrateState()} />} />
-      <Route exact path="/dashboard" component={Dashboard} />
+      { gridOrDashboard }
+      <Route exact path="/videos" render={(props) => <VideoGrid {...props} hydrateState={()=>this.hydrateState()} />} />
+      <Route exact path="/quotes" render={(props) => <Quotes {...props} hydrateState={()=>this.hydrateState()} />} />
       
       </div>
     )
