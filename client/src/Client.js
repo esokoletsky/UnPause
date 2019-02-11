@@ -34,6 +34,17 @@ function getVideos(cb) {
     .then(cb);
 }
 
+function getQuotes(cb) {
+  return fetch('/quotes', {
+    accept: "application/json",
+    method: 'get',
+    headers: {'Content-Type':'application/json'}
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
@@ -49,5 +60,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { register, login, getVideos };
+const Client = { register, login, getVideos, getQuotes };
 export default Client;

@@ -88,7 +88,7 @@ module.exports = function(app, passport) {
     app.get('/profile', (req,res)=>{
       res.send({user:req.user});
     });
-
+//////////////////  YouTube API  /////////////////////// 
     app.get('/youtube', (req,res)=>{
         var request = require("request");
 
@@ -108,6 +108,30 @@ module.exports = function(app, passport) {
         });
     });
   
+    /////////////////// Quotes API ////////////////////
+    app.get('/youtube', (req,res)=>{
+      var request = require("request");
+      var options = { method: 'GET',
+        url: 'https://healthruwords.p.mashape.com/v1/quotes/',
+        qs: { id: '731', maxR: '1', size: 'medium', t: 'Wisdom' },
+        headers: 
+        { 'Postman-Token': 'aba0350b-dd9c-423b-b644-128876c2f451',
+          'cache-control': 'no-cache',
+          'X-Mashape-Key': 'B3QPWgUy9AmshbKVAui5pw8u292dp1Nok1PjsnjaIvJSkW2zdo',
+          'Content-Type': 'application/json' },
+        body: { email: 'madeupemail', password: 'madeup' },
+        json: true };
+
+      request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        res.send(body);
+    });
+  });  
+
+
+
+    
     function isLoggedIn(req,res,next){
       if(req.isAuthenticated())
         return next();
