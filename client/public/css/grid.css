@@ -2,14 +2,40 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+.grid a {
+    color: white;
+  }
   
   .grid div {
     flex: 1;
     margin: 20px 5%;
     min-width: 40%;
     text-align: center;
+    color: white;
+    font-size: 30px;
   }
 
+
+
+  .goal-set {
+    margin: 10px;
+  }
+
+  .box {
+    background-color: #733935;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .logo img {
+    max-width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 70%;
+    margin-bottom: 10px;
+  }
  
   
   

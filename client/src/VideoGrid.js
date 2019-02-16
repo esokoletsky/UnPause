@@ -12,19 +12,20 @@ export class VideoGrid extends Component {
 
   componentDidMount(){
     Client.getVideos((res)=>{
+      // console.log(res);
       this.setState({videos:res.items});
     });
   }
 
   render() {
-    let videos = this.state.videos.map(video=>{
-      return (<div class="video-container col s12 m6">
-          <iframe width="853" height="480" src={`//www.youtube.com/embed/${video.id.videoId}?rel=0`} frameborder="0" allowfullscreen></iframe>
+    let videos = this.state.videos.map((video,index)=>{
+      return (<div key={`video-${index}`}>
+          <iframe title={video.snippet.title} width="460" height="200" src={`//www.youtube.com/embed/${video.id.videoId}?rel=0`} frameBorder="0" allowFullScreen></iframe>
         </div>);
     })
     return (
-      <div class="mot-video-container">
-        {videos}
+      <div className="videoGrid">
+        <div className="col">{videos}</div> 
       </div>
     )
   }

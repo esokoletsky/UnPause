@@ -12,21 +12,22 @@ export class Quotes extends Component {
   
   componentDidMount(){
     Client.getQuotes((res)=>{
-      this.setState({quotes:res.items});
+        // console.log(res);
+      this.setState({quotes:[res]});
     });
   }
 
   render() {
-    let quotes = this.state.quotes.map(quote=>{
+    let quotes = this.state.quotes.map((quote,index)=>{
       return (
-      <div>
-          <div src={`https://healthruwords.p.mashape.com/v1/quotes/${quote.media}`}> </div>
+      <div key={`media-${index}`}>
+          <img src={quote.media} alt={quote.title} />
         </div>
         );
     })
     return (
       <div>
-        {quotes}
+        <div className="img-box">{quotes}</div>
       </div>
     )
   }

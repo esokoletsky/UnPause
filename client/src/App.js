@@ -5,9 +5,13 @@ import Dashboard from './Dashboard';
 import Login from './Login';
 import Logout from './Logout';
 import Header from './Header';
+import Footer from './Footer';
 import VideoGrid from './VideoGrid';
 import Quotes from './Quotes';
+import Goals from './Goals';
+import CurrentGoals from './CurrentGoals';
 import Grid from './Grid';
+import Meditation from './Meditation'
 import { Route } from 'react-router-dom';
 class App extends Component {
   
@@ -33,12 +37,17 @@ class App extends Component {
 
 
   render() {
-    let gridOrDashboard = (this.state.isLoggedIn) ? <Route exact path="/dashboard" render={(props) => <Dashboard {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} /> : <Route exact path="/" render={(props) => <Grid {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} />;
+    let gridOrDashboard = (this.state.isLoggedIn) ? <Route exact path="/dashboard" render={(props) => 
+    <Dashboard {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} /> 
+    : <Route exact path="/" render={(props) => <Grid {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} />;
+
     return (
+    <div>
+    <Header {...this.state} />
       <div className="container">
       <p>LoggedIn: {""+this.state.isLoggedIn+""}</p>
-      <Header />
-      <Nav {...this.state} />
+      
+      
       <Route exact path="/login" render={(props) => <Login {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/login/:redirect" render={(props) => <Login {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/logout" render={(props) => <Logout {...props} hydrateState={()=>this.hydrateState()} />} />
@@ -46,8 +55,12 @@ class App extends Component {
       { gridOrDashboard }
       <Route exact path="/videos" render={(props) => <VideoGrid {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/quotes" render={(props) => <Quotes {...props} hydrateState={()=>this.hydrateState()} />} />
-      
+      <Route exact path="/goals" render={(props) => <Goals {...props} hydrateState={()=>this.hydrateState()} />} />
+      <Route exact path="/user-goals" render={(props) => <CurrentGoals {...props} hydrateState={()=>this.hydrateState()} />} />
+      <Route exact path="/meditation" render={(props) => <Meditation {...props} hydrateState={()=>this.hydrateState()} />} />
       </div>
+      <Footer />
+    </div>
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import Grid from './Grid';
 
 class Dashboard extends Component {
@@ -12,7 +12,7 @@ class Dashboard extends Component {
       
     return (
       <div className="dashboard-wrapper">
-        <h1>Dashboard for {email}</h1>
+        <h5>Welcome back {email}</h5>
         <Grid {...this.props} />
       </div>
     );

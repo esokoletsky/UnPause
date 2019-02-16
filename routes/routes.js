@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Goal = require('../models/goal');
 
 
 module.exports = function(app, passport) {
@@ -89,7 +90,7 @@ module.exports = function(app, passport) {
       res.send({user:req.user});
     });
 //////////////////  YouTube API  /////////////////////// 
-    app.get('/youtube', (req,res)=>{
+    app.get('/youtube/:search', (req,res)=>{
         var request = require("request");
 
         var options = { method: 'GET',
@@ -97,7 +98,7 @@ module.exports = function(app, passport) {
         qs: 
         { part: 'snippet',
             maxResults: '5',
-            q: 'motivational',
+            q: req.params.search,
             key: 'AIzaSyAqMXV6X2Athcax8_D9M2ZXdLQT0CMSRE8' }
             };
 
@@ -109,11 +110,11 @@ module.exports = function(app, passport) {
     });
   
     /////////////////// Quotes API ////////////////////
-    app.get('/youtube', (req,res)=>{
+    app.get('/quotes', (req,res)=>{
       var request = require("request");
       var options = { method: 'GET',
         url: 'https://healthruwords.p.mashape.com/v1/quotes/',
-        qs: { id: '731', maxR: '1', size: 'medium', t: 'Wisdom' },
+        qs: { id: '731', maxR: '100', size: 'medium', t: 'Motivational' },
         headers: 
         { 'Postman-Token': 'aba0350b-dd9c-423b-b644-128876c2f451',
           'cache-control': 'no-cache',
@@ -124,21 +125,57 @@ module.exports = function(app, passport) {
 
       request(options, function (error, response, body) {
         if (error) throw new Error(error);
-
         res.send(body);
     });
   });  
 
+////////////////////// Goals Endpoint   //////////////////////
 
+app.get('/goals', (req, res) => {
+  Goal
+    .find()
+    .then(goals => {
+      res.json({goals: goals.map(goal => goal.serialize())}
+      );
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'something went terribly wrong' });
+    });
+});
 
-    
-    function isLoggedIn(req,res,next){
-      if(req.isAuthenticated())
-        return next();
-  
-      res.redirect('/');
+app.get('/user-goals/:userID', (req, res) => {
+  Goal
+    .find({user: req.params.userID})
+    .then(goals => {
+      res.send(goals);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'something went terribly wrong' });
+    });
+});
+
+app.post('/goals', (req, res) => {
+  const requiredFields = ['minutes', 'hours', 'day', 'overall' ];
+  for (let i = 0; i < requiredFields.length; i++) {
+    const field = requiredFields[i];
+    if (!(field in req.body)) {
+      const message = `Missing \`${field}\` in request body`;
+      console.error(message);
+      return res.status(400).send(message);
     }
+  }
+  
+  Goal.create(req.body)
+    .then(goal=>{
+      res.status(200).json(goal);
+    })
+    .catch(err=>res.send(err));
+  
+  
 
+});
 
 
 };

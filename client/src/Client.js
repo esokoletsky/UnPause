@@ -24,7 +24,7 @@ function login(user, cb) {
     .then(cb);
 }
 function getVideos(cb) {
-  return fetch('/youtube', {
+  return fetch('/youtube/motivational', {
     accept: "application/json",
     method: 'get',
     headers: {'Content-Type':'application/json'}
@@ -33,7 +33,37 @@ function getVideos(cb) {
     .then(parseJSON)
     .then(cb);
 }
-
+function getMeditation(cb) {
+  return fetch('/youtube/meditation', {
+    accept: "application/json",
+    method: 'get',
+    headers: {'Content-Type':'application/json'}
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+function createGoal(goal, cb) {
+  return fetch('/goals', {
+    accept: "application/json",
+    method: 'post',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(goal)
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+function getGoal(cb) {
+  return fetch('/user-goals/'+localStorage.getItem('userID'), {
+    accept: "application/json",
+    method: 'get',
+    headers: {'Content-Type':'application/json'}
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
 function getQuotes(cb) {
   return fetch('/quotes', {
     accept: "application/json",
@@ -60,5 +90,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { register, login, getVideos, getQuotes };
+const Client = { register, login, getVideos, getQuotes, createGoal, getGoal, getMeditation };
 export default Client;

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import Nav from './Nav';
 import { Link } from 'react-router-dom';
 
+
 export class Header extends Component {
+
+
   render() {
     return (
       <div className="header">
-        Welcome to <Link to="/">UnPause</Link>!
+        <Link to="/"><img src='../img/icon-left-font.png'></img></Link>
+        <Nav {...this.props}/> 
       </div>
     )
   }

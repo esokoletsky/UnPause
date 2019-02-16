@@ -1,0 +1,8 @@
+.videoGrid {
+    display: flex;
+}
+
+.col {
+    justify-content: space-between;
+    width: 32%;
+}

@@ -1,0 +1,21 @@
+* {
+    font-family: 'Fertigo_PRO';
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 84vh;
+}
+
+@font-face {
+    font-family: 'Fertigo_PRO';
+    src: url('Fertigo_PRO-webfont.woff2') format('woff2'),
+         url('Fertigo_PRO-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
