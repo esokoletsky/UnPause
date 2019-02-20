@@ -11,7 +11,7 @@ export class Meditation extends Component {
       }
     
       handleClick() {
-        Client.getVideos((res)=>{
+        Client.getMeditation((res)=>{
           // console.log(res);
           this.setState({video:res.video});
         });

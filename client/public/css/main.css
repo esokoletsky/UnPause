@@ -15,6 +15,13 @@ body {
     text-align: center;
 }
 
+button {
+    background-color: #FCF2E5;
+    border: 2px solid rgb(250, 233, 211);
+    border-radius: 6px;
+    color: #D5751A;
+    padding: 8px;
+}
 @font-face {
     font-family: 'Agane';
     src: url('fonts\agane\Agane╠Ç 45 (light).ttf');

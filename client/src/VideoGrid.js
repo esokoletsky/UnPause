@@ -27,7 +27,7 @@ export class VideoGrid extends Component {
   render() {
     return (
       <div>
-      <h2>Motivational Video</h2>
+      <h2 className='titles'>Motivational Video</h2>
         <div className="video-container">
           <iframe width="853" height="480" src={`//www.youtube.com/embed/${this.state.video}?rel=0`} frameBorder="0" allowFullScreen></iframe>
         </div>

@@ -39,7 +39,7 @@ class App extends Component {
   render() {
     let gridOrDashboard = (this.state.isLoggedIn) ? <Route exact path="/dashboard" render={(props) => 
     <Dashboard {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} /> 
-    : <Route exact path="/" render={(props) => <Grid {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} />;
+    : <Route exact path="/grid" render={(props) => <Grid {...this.state} {...props} hydrateState={()=>this.hydrateState()} />} />;
 
     return (
     <div>
@@ -56,6 +56,7 @@ class App extends Component {
       <Route exact path="/goals" render={(props) => <Goals {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/user-goals" render={(props) => <CurrentGoals {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/meditation" render={(props) => <Meditation {...props} hydrateState={()=>this.hydrateState()} />} />
+      <Route exact path="/grid" render={(props) => <Grid {...props} hydrateState={()=>this.hydrateState()} />} />
       </div>
       <Footer />
     </div>
