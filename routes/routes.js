@@ -90,7 +90,18 @@ module.exports = function(app, passport) {
     app.get('/youtube/:search', (req,res)=>{
         var request = require("request");
 
-        var options = { method: 'GET',
+        let videos = {
+          'motivational':[
+            'ibUR41DRz2I','Q8lCFHUecTE'
+          ],
+          'meditation':[
+            'ibUR41DRz2I','Q8lCFHUecTE'
+          ]
+        }
+
+        res.send({'video':videos[req.params.search][Math.floor(Math.random()*videos[req.params.search].length)]})
+
+        /*var options = { method: 'GET',
         url: 'https://www.googleapis.com/youtube/v3/search',
         qs: 
         { part: 'snippet',
@@ -103,9 +114,11 @@ module.exports = function(app, passport) {
             if (error) throw new Error(error);
 
             res.send(body);
-        });
+        });*/
     });
   
+
+
     /////////////////// Quotes API ////////////////////
     app.get('/quotes', (req,res)=>{
       var request = require("request");

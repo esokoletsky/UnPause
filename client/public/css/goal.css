@@ -16,3 +16,8 @@
     margin: 7px;
     font-size: 15px;
 }
+
+.goal-set span {
+    font-weight: bold;
+    margin: 0 10px 0 0;
+}
