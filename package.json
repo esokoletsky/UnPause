@@ -24,7 +24,8 @@
     "start": "node server.js",
     "start-dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon --ignore './client/' server.js",
-    "client": "node start-client.js"
+    "client": "node start-client.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "devDependencies": {
     "concurrently": "^3.6.1",
