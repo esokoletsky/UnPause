@@ -21,7 +21,8 @@
     "sql.js": "0.3.2"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "start-dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon --ignore './client/' server.js",
     "client": "node start-client.js"
   },
