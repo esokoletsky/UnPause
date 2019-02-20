@@ -1,4 +1,6 @@
 .grid {
+    margin-top: 80px;
+    margin-bottom: 45px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -23,13 +25,13 @@
   }
 
   .box {
-    background-color: #733935;
+    background-color: #E46C1A;
     border-radius: 5px;
     padding: 20px;
   }
 
   .logo img {
-    max-width: 30%;
+    max-width: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;

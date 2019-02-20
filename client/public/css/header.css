@@ -1,12 +1,13 @@
 .header {
     text-align: center;
-    font-size: 21px;
-    padding: 5px;
-    background-color: #EFC812;
+    font-size: 18px;
+    padding: 9px;
+    background-color: #FDF2E5;
 }
 
 .header img {
-    max-width:200px;
+    margin: 0;
+    max-width:180px;
     max-height:100%;
     float: left;
 }

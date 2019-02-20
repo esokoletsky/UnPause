@@ -19,13 +19,16 @@ export class VideoGrid extends Component {
 
   render() {
     let videos = this.state.videos.map((video,index)=>{
-      return (<div key={`video-${index}`}>
-          <iframe title={video.snippet.title} width="460" height="200" src={`//www.youtube.com/embed/${video.id.videoId}?rel=0`} frameBorder="0" allowFullScreen></iframe>
+      return (<div key={`video-${index}`} className="video-container">
+          <iframe title={video.snippet.title} width="853" height="480" src={`//www.youtube.com/embed/${video.id.videoId}?rel=0`} frameBorder="0" allowFullScreen></iframe>
         </div>);
     })
     return (
-      <div className="videoGrid">
-        <div className="col">{videos}</div> 
+      <div>
+        <h2 className="titles">Motivational Video</h2>
+        <div className="videoGrid">
+          <div className="col">{videos}</div> 
+        </div>
       </div>
     )
   }

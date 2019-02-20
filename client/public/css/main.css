@@ -1,5 +1,5 @@
 * {
-    font-family: 'Fertigo_PRO';
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -10,10 +10,14 @@ body {
     min-height: 84vh;
 }
 
+.titles {
+    color: #341C01;
+    text-align: center;
+}
+
 @font-face {
-    font-family: 'Fertigo_PRO';
-    src: url('Fertigo_PRO-webfont.woff2') format('woff2'),
-         url('Fertigo_PRO-webfont.woff') format('woff');
+    font-family: 'Agane';
+    src: url('fonts\agane\Agane╠Ç 45 (light).ttf');
     font-weight: normal;
     font-style: normal;
 

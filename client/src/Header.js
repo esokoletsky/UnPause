@@ -9,7 +9,7 @@ export class Header extends Component {
   render() {
     return (
       <div className="header">
-        <Link to="/"><img src='../img/icon-left-font.png'></img></Link>
+        <Link to={(this.props.isLoggedIn)? "/dashboard" : "/"}><img src='../img/icon-left-font.png'></img></Link>
         <Nav {...this.props}/> 
       </div>
     )

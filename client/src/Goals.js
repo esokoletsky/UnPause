@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import Client from './Client';
 
 export class Goals extends Component {
@@ -26,7 +25,7 @@ export class Goals extends Component {
 
     Client.createGoal(goal,(res)=>{
       console.log(res);
-      this.props.history.push('/dashboard');
+      this.props.history.push('/user-goals');
     });
     //alert('see eugene, he knows what he is doing')
 
@@ -45,7 +44,7 @@ render() {
   return (
     <div className="App">
       <header>
-      Setup your goals
+      <h2 className="titles">Setup your goals</h2>
         <form onSubmit={(e)=>this.onSubmit(e)}>
           <p>
             <label htmlFor="quickGoal">Quick Goal (under 30 min)</label>
@@ -66,7 +65,8 @@ render() {
           <p><input type="submit"/></p>
         </form>
       </header>
-      <div> <Link  to="/user-goals/" >Current Goals</Link>  </div>
+      
+
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.goal-set {
+    list-style: none;
+    border-bottom: solid 1px #EBA91B;
+
+}
+
+.goal-set button{
+    float: right;
+    background-color: #FCF2E5;
+    border: 1px solid #341C01;
+    border-radius: 6px;
+    color: #D5751A;
+}
+
+.goal-set li{
+    margin: 7px;
+    font-size: 15px;
+}

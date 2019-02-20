@@ -1,8 +1,4 @@
-.videoGrid {
-    display: flex;
-}
-
-.col {
-    justify-content: space-between;
-    width: 32%;
+iframe {
+    border: solid 4px #FCF2E5;
+    margin-bottom: 25px;
 }

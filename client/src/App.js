@@ -45,8 +45,6 @@ class App extends Component {
     <div>
     <Header {...this.state} />
       <div className="container">
-      <p>LoggedIn: {""+this.state.isLoggedIn+""}</p>
-      
       
       <Route exact path="/login" render={(props) => <Login {...props} hydrateState={()=>this.hydrateState()} />} />
       <Route exact path="/login/:redirect" render={(props) => <Login {...props} hydrateState={()=>this.hydrateState()} />} />

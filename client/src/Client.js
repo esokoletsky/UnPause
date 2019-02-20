@@ -54,6 +54,17 @@ function createGoal(goal, cb) {
     .then(parseJSON)
     .then(cb);
 }
+function deleteGoal(id, cb) {
+  return fetch('/goals', {
+    accept: "application/json",
+    method: 'delete',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({id:id})
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
 function getGoal(cb) {
   return fetch('/user-goals/'+localStorage.getItem('userID'), {
     accept: "application/json",
@@ -90,5 +101,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { register, login, getVideos, getQuotes, createGoal, getGoal, getMeditation };
+const Client = { register, login, getVideos, getQuotes, createGoal, getGoal, deleteGoal, getMeditation };
 export default Client;
