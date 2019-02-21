@@ -55,7 +55,7 @@ class Register extends Component {
               <label htmlFor="password">Password:</label>
               <input type="password" id="password" placeholder="password" onChange={(e)=>this.onChange(e)} value={this.state.password}/>
             </p>
-            <p><input type="submit"/></p>
+            <p><button type="submit">Submit</button></p>
           </form>
         </header>
       </div>

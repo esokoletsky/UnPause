@@ -93,7 +93,7 @@ module.exports = function(app, passport) {
         let videos = {
           'motivational':[
             'ibUR41DRz2I','Q8lCFHUecTE','0v8ARinQSnM','0-41QTntHqI','R3nxw3bg7XU',
-            'y-lIFD8pIkU', 'fSmySmxYMyw', 'k9qPlbhpAPU', 'ZGU4lLJwFKo', 'NDcvREId6KQ'
+            'H-aAXuZpp9c', 'fSmySmxYMyw', 'k9qPlbhpAPU', 'ZGU4lLJwFKo', 'NDcvREId6KQ'
           ],
           'meditation':[
             'taxs_vhlxgs', 'CcqZ47d398k', '_0oxd7Llcec', 'xgdFdTNMr5c', 'bRch_4IeuXQ',

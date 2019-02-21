@@ -1,4 +1,13 @@
 iframe {
-    border: solid 4px #FCF2E5;
+    border: solid 5px #FCF2E5;
+}
+
+.video-container {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.video-container-button {
     margin-bottom: 25px;
+    margin-left: 50%;
 }

@@ -7,7 +7,7 @@
 .goal-set button{
     float: right;
     background-color: #FCF2E5;
-    border: 1px solid #341C01;
+    border: 2px solid rgb(250, 233, 211);
     border-radius: 6px;
     color: #D5751A;
 }

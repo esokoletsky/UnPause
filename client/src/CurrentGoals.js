@@ -30,10 +30,10 @@ export class CurrentGoals extends Component {
         let goals = this.state.goals.map((goal,index)=>{
           return (
           <div key={`goal-${index}`} className="goal-set">
-            <li><span>Quick:</span> {goal.minutes}</li>  
-            <li><span>Moderate:</span> {goal.hours}</li>
-            <li><span>Daily:</span> {goal.day}</li>
-            <li><span>Overall:</span> {goal.overall}</li>
+            <li><span>Quick:</span><p>{goal.minutes}</p></li>  
+            <li><span>Moderate:</span><p>{goal.hours}</p></li>
+            <li><span>Daily:</span><p>{goal.day}</p></li>
+            <li><span>Overall:</span><p>{goal.overall}</p></li>
             <button onClick={()=>this.removeGoal(goal._id)}>Delete</button>
             <br></br>
             <br></br>

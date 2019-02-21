@@ -8,7 +8,7 @@ class Logout extends Component {
         super(props);
         localStorage.clear();
         this.props.hydrateState();
-        this.props.history.push('/');
+        this.props.history.push('/grid');
       }
 
 

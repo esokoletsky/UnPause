@@ -28,10 +28,11 @@ export class VideoGrid extends Component {
     return (
       <div>
       <h2 className='titles'>Motivational Video</h2>
+      <button className="video-container-button" onClick={()=>this.handleClick()}>Next</button>
         <div className="video-container">
           <iframe width="853" height="480" src={`//www.youtube.com/embed/${this.state.video}?rel=0`} frameBorder="0" allowFullScreen></iframe>
         </div>
-        <div style={{textAlign: "center"}}><button onClick={()=>this.handleClick()}>Next</button></div>
+       <button className="video-container-button" onClick={()=>this.handleClick()}>Next</button>
       </div>
     )
   }

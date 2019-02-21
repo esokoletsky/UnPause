@@ -26,13 +26,14 @@ export class Meditation extends Component {
     
       render() {
         return (
-          <div>
-            <h2>Meditation Video</h2>
+        <div>
+          <h2 className='titles'>Meditation Video</h2>
+          <button className="video-container-button" onClick={()=>this.handleClick()}>Next</button>
             <div className="video-container">
               <iframe width="853" height="480" src={`//www.youtube.com/embed/${this.state.video}?rel=0`} frameBorder="0" allowFullScreen></iframe>
             </div>
-            <div style={{textAlign: "center"}}><button onClick={()=>this.handleClick()}>Next</button></div>
-          </div>
+          <button className="video-container-button" onClick={()=>this.handleClick()}>Next</button>
+        </div>
         )
       }
     }
