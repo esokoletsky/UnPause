@@ -2,6 +2,11 @@
  
  UnPause is a web app that helps you get moving again. All of us face procrastination at one point or another, this app was designed to get you back on track. It features motivational quotes, videos, meditaion, and even a goal oriented list. 
  
+ Demo Account:
+ email: demo@gmail.com
+ password: demo
+ 
+ 
  Live link to [UnPause](https://vast-tundra-61543.herokuapp.com/)
  
  __________________________________________________________________________________________________________________________________________
