@@ -9,10 +9,12 @@
 
 ## Screenshot
 
+
 ![Dashboard](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Dashboard.PNG)
 
 
 __________________________________________________________________________________________________________________________________________
+
 
 
 ![Login](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Login.PNG)
@@ -21,10 +23,12 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________________
 
 
+
 ![Goals](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Goals.PNG)
 
 
 __________________________________________________________________________________________________________________________________________
+
 
 
 ![Meditaion Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Meditation-Video.PNG)
@@ -33,10 +37,12 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________________
 
 
+
 ![Motivational Quotes](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Quotes.PNG)
 
 
 __________________________________________________________________________________________________________________________________________
+
 
 
 ![Motivational Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Video.PNG)
