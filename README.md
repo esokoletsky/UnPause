@@ -10,7 +10,9 @@
 ## Screenshot
 
 ![Dashboard](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Dashboard.PNG)
-![alt text](https://github.com/esokoletsky/FitLog/blob/master/public/images/login.PNG)
-![alt text](https://github.com/esokoletsky/FitLog/blob/master/public/images/signup.PNG)
-![alt text](https://github.com/esokoletsky/FitLog/blob/master/public/images/setuproutine.PNG)
-![alt text](https://github.com/esokoletsky/FitLog/blob/master/public/images/routine.PNG)
+![Login](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Login.PNG)
+![Goals](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Goals.PNG)
+![Meditaion Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Meditation-Video.PNG)
+![Motivational Quotes](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Quotes.PNG)
+![Motivational Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Video.PNG)
+
