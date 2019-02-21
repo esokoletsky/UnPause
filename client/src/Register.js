@@ -42,22 +42,19 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header>
-          Eugene's Mindful Meditation App
-          
-          <form onSubmit={(e)=>this.onSubmit(e)}>
+      <div className="credential-container">
+          <form className="credentials" onSubmit={(e)=>this.onSubmit(e)}>
+          <h4>Register</h4>
             <p>
               <label htmlFor="email">Email:</label>
-              <input type="email" id="email" placeholder="email" onChange={(e)=>this.onChange(e)} value={this.state.email}/>
+              <p><input type="email" id="email" placeholder="email" onChange={(e)=>this.onChange(e)} value={this.state.email}/></p>
             </p>
             <p>
               <label htmlFor="password">Password:</label>
-              <input type="password" id="password" placeholder="password" onChange={(e)=>this.onChange(e)} value={this.state.password}/>
+              <p><input type="password" id="password" placeholder="password" onChange={(e)=>this.onChange(e)} value={this.state.password}/></p>
             </p>
             <p><button type="submit">Submit</button></p>
           </form>
-        </header>
       </div>
     );
   }

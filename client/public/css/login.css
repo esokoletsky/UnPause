@@ -1,4 +1,21 @@
-input {
-    width: 30%;
+#email {
+    width: 60%; 
+}
+
+#password {
+    width: 60%;
+}
+
+.credential-container{
+    width: 40%;
+    margin: 0px auto;
     
+}
+.credentials {
+    border: solid 3px #FCF2E5;
+    border-radius: 5px;
+    margin-top: 90px;
+    text-align: center;
+    padding: 30px 0px;
+
 }
