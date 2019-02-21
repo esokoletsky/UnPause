@@ -48,3 +48,13 @@ ________________________________________________________________________________
 ![Motivational Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Video.PNG)
 
 
+__________________________________________________________________________________________________________________________________________
+Built with:
+
+Frontend: HTML/JS/CSS
+
+Backend: Node/Express
+
+Database: MongoDB
+
+Auth layer: Passport
