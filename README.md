@@ -10,8 +10,14 @@
 ## Screenshot
 
 ![Dashboard](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Dashboard.PNG)
+
+
 ![Login](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Login.PNG)
+
+
 ![Goals](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Goals.PNG)
+
+
 ![Meditaion Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Meditation-Video.PNG)
 ![Motivational Quotes](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Quotes.PNG)
 ![Motivational Video](https://github.com/esokoletsky/UnPause/blob/master/client/public/img/Motivational-Video.PNG)
