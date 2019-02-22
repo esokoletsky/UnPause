@@ -5,7 +5,10 @@ export class Grid extends Component {
 
   render() {
     return (
-  <div>    
+  <div> 
+  <h5 className="explain">UnPause is a web app that helps you get moving again. All of us face procrastination at one point or another,
+   this app was designed to get you back on track. It features motivational quotes, videos, meditaion,
+    and even a goal oriented list.</h5>   
     <section className="grid">
       <div className="box"> <Link  to={ (this.props.isLoggedIn) ? "/videos" : "/login/videos" }>Motivational Videos</Link>  </div>
       <div className="box"> <Link  to={ (this.props.isLoggedIn) ? "/quotes" : "/login/quotes" }>Motivational Quotes</Link>  </div>

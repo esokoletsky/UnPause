@@ -59,6 +59,11 @@ class Login extends Component {
             </p>
             <p><button type="submit">Submit</button></p>
           </form>
+          <div className="demo">
+          <p>Demo Account:</p>
+          <p>email: demo@gmail.com</p>
+          <p>password: demo</p>
+          </div>
       </div>
     );
   }

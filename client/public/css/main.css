@@ -23,8 +23,12 @@ button {
     padding: 8px;
     font-size: 15px;
     font-weight: bold;
-    
 }
+
+h5 {
+    color: #371F04;
+}
+
 @font-face {
     font-family: 'Agane';
     src: url('fonts\agane\Agane╠Ç 45 (light).ttf');
