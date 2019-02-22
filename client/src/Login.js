@@ -51,7 +51,7 @@ class Login extends Component {
           <h4>Login</h4>
             <p>
               <label htmlFor="email">Email:</label>
-              <p><input type="email" id="email" placeholder="email" value="demo@gmail.com" onChange={(e)=>this.onChange(e)} value={this.state.email}/></p>
+              <p><input type="email" id="email" placeholder="email" value="demo2@gmail.com" onChange={(e)=>this.onChange(e)} value={this.state.email}/></p>
             </p>
             <p>
               <label htmlFor="password">Password:</label>
