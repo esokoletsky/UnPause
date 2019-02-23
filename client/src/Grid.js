@@ -6,7 +6,8 @@ export class Grid extends Component {
   render() {
     return (
   <div> 
-  <h5 className="explain">UnPause is a web app that helps you get moving again. All of us face procrastination at one point or another,
+  <h5 className="explain"><h4>UnPause is a web app that helps you get moving again.</h4>
+   All of us face procrastination at one point or another,
    this app was designed to get you back on track. It features motivational quotes, videos, meditaion,
     and even a goal oriented list.</h5>   
     <section className="grid">
